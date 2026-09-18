@@ -1,0 +1,49 @@
+pipeline {
+    agent any 
+    
+    stages{
+        stage("Build"){
+            steps{
+                echo "Build code using Malven automation tool"
+            }
+        }
+        
+        stage("Unit and integration tests"){
+            steps{
+                echo "Run unit and integration tests"
+            }
+        }
+        
+        stage("Code Analysis"){
+            steps{
+                echo "Analyse code using SonarQube"
+            }
+        }
+        
+        stage("Security Scan"){
+            steps {
+                echo "Scan code for vulnerabilities using snyk"
+            }
+        }
+        
+        stage("Deploy to staging"){
+            steps{
+                echo "Deploy application to staging server like AWS"
+            }
+        }
+        
+        stage("Integration tests on staging"){
+            steps {
+                echo "Run integration tests on the staging environment"
+            }
+        }
+        
+        stage("Deploy To Production"){
+            steps {
+                echo "Deploy application to production server"
+            }
+        }
+        
+        
+    }
+}
